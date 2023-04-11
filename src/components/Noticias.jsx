@@ -1,6 +1,7 @@
 const Noticias = ({ noticias }) => {
 
     const url = 'https://i0.wp.com/iotbyhvm.ooo/wp-content/uploads/2019/04/docker-hub.png?resize=800%2C445&ssl=1';
+    
 
     return ( 
         <div className="col-12 col-lg-7">
@@ -14,13 +15,18 @@ const Noticias = ({ noticias }) => {
                         <div className="d-flex justify-content-between align-items-center">
                             <h2>{noticia.name}</h2>
                             <p>
-                                06/12/1999
+                                {noticia.datePublished.substring(0, 10)}
                             </p>
                         </div>
-                        <div className="imagen">
-                            <img src={url} className="img-fluid" />
-                        </div>
-                        <div>
+                        { noticia.image?.thumbnail?.contentUrl &&
+                            <div className="imagen">
+                                <img 
+                                    className="img-fluid"
+                                    src={noticia.image.thumbnail.contentUrl}
+                                />
+                            </div>
+                        }
+                        <div className="noticia-parrafo">
                             <p>
                                 {noticia.description}
                             </p>

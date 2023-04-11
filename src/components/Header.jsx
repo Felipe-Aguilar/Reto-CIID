@@ -11,7 +11,7 @@ const Header = () => {
                         <i className="bi bi-bell-fill"></i>
                     </button>
                     <button>
-                        <i class="bi bi-brightness-high"></i>
+                        <i className="bi bi-brightness-high"></i>
                     </button>
                 </div>
             </div>

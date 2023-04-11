@@ -68,6 +68,15 @@ $colorTexto: #878787;
                     margin: auto;
                 }
             }
+
+            .noticia-parrafo{
+                p{
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 2;
+                    overflow: hidden;
+                }
+            }
         }
     }
 
