@@ -1,13 +1,11 @@
-const Noticias = ({ noticias }) => {
-
-    const url = 'https://i0.wp.com/iotbyhvm.ooo/wp-content/uploads/2019/04/docker-hub.png?resize=800%2C445&ssl=1';
+const Noticias = ({ noticias, busqueda, buscando }) => {
     
 
     return ( 
         <div className="col-12 col-lg-7">
             <div className="noticias">
                 <p>
-                    Feed de Noticias
+                    Feed de Noticias {busqueda && `: ${buscando}`}
                 </p>
 
                 { noticias.map((noticia, index)=>(

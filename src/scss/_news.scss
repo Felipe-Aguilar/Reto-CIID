@@ -28,8 +28,17 @@ $colorTexto: #878787;
 
         .filtro{
             padding: 10px 0;
-            p{
-                margin: 0;
+            button{
+                background: transparent;
+                outline: none!important;
+                border: none;
+                text-align: left;
+                font-weight: 300;
+                color: $colorTexto;
+
+                i{
+                    margin-right: 10px;
+                }
             }
         }
     }
