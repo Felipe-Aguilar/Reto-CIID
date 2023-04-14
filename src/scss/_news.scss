@@ -28,8 +28,18 @@ $colorTexto: #878787;
 
         .filtro{
             padding: 10px 0;
-            p{
-                margin: 0;
+            button{
+                background: transparent;
+                outline: none!important;
+                border: none;
+                text-align: left;
+                font-weight: 300;
+                color: $colorTexto;
+                width: 100%;
+
+                i{
+                    margin-right: 10px;
+                }
             }
         }
     }
@@ -39,11 +49,7 @@ $colorTexto: #878787;
         text-transform: uppercase;
         letter-spacing: 1px;
 
-        @media screen and (max-width: 575px){
-            margin-top: 20px;
-        }
-
-        @media screen and (max-width: 800px){
+        @media screen and (max-width: 834px){
             margin-top: 20px;
         }
 
@@ -53,13 +59,33 @@ $colorTexto: #878787;
             text-transform: none;
             margin-bottom: 20px;
 
-            h2{
-                font-size: 1.5rem;
+            .noticia-titulo{
+                width: 75%;
+                h2{
+                    font-size: 1.5rem;
+
+                    @media screen and (max-width: 834px){
+                        font-size: 0.9rem;
+                    }
+
+                    @media screen and (max-width: 575px){
+                        font-size: 0.9rem;
+                    }
+
+                }
             }
-            p{
-                margin: 0;
-                font-size: .9rem;
+            .noticia-fecha{
+                width: 25%;
+                text-align: right;
+                p{
+                    margin: 0;
+                    font-size: .9rem;
+                    @media screen and (max-width: 575px){
+                        font-size: 0.7rem;
+                    }
+                }
             }
+
             
             .imagen{
                 margin: 15px 0;
@@ -68,21 +94,15 @@ $colorTexto: #878787;
                     margin: auto;
                 }
             }
-        }
-    }
 
-    .recomendados{
-        background: #fff;
-        padding: 20px;
-        font-weight: 300;
-        margin-top: 40px;
-
-        @media screen and (max-width: 575px){
-            margin-top: 20px;
-        }
-
-        @media screen and (max-width: 800px){
-            margin-top: 20px;
+            .noticia-parrafo{
+                p{
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 2;
+                    overflow: hidden;
+                }
+            }
         }
     }
 }

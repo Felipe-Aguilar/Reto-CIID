@@ -10,9 +10,9 @@ const Header = () => {
                     <button>
                         <i className="bi bi-bell-fill"></i>
                     </button>
-                    <button>
-                        <i class="bi bi-brightness-high"></i>
-                    </button>
+                    {/* <button>
+                        <i className="bi bi-brightness-high"></i>
+                    </button> */}
                 </div>
             </div>
         </header>

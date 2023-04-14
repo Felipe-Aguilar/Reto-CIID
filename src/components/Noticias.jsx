@@ -1,26 +1,38 @@
-const Noticias = ({ noticias }) => {
+import { useContext } from "react";
+import { Busqueda } from "../context/Busqueda";
 
-    const url = 'https://i0.wp.com/iotbyhvm.ooo/wp-content/uploads/2019/04/docker-hub.png?resize=800%2C445&ssl=1';
+const Noticias = ({ noticias }) => {
+    
+    const {busqueda, buscado} = useContext(Busqueda);
 
     return ( 
-        <div className="col-12 col-lg-7">
+        <div className="col-12 col-lg-6">
             <div className="noticias">
                 <p>
-                    Feed de Noticias
+                    Feed de Noticias {busqueda && `: ${buscado}`}
                 </p>
 
                 { noticias.map((noticia, index)=>(
                     <div className="noticias-cuerpo" key={index}>
-                        <div className="d-flex justify-content-between align-items-center">
-                            <h2>{noticia.name}</h2>
-                            <p>
-                                06/12/1999
-                            </p>
+                        <div className="d-flex justify-content-between align-items-lg-center">
+                            <div className="noticia-titulo">
+                                <h2>{noticia.name}</h2>
+                            </div>
+                            <div className="noticia-fecha">
+                                <p>
+                                    {noticia.datePublished.substring(0, 10)}
+                                </p>
+                            </div>
                         </div>
-                        <div className="imagen">
-                            <img src={url} className="img-fluid" />
-                        </div>
-                        <div>
+                        { noticia.image?.thumbnail?.contentUrl &&
+                            <div className="imagen">
+                                <img 
+                                    className="img-fluid"
+                                    src={noticia.image.thumbnail.contentUrl}
+                                />
+                            </div>
+                        }
+                        <div className="noticia-parrafo">
                             <p>
                                 {noticia.description}
                             </p>
